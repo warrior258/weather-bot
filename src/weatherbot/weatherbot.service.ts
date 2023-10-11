@@ -119,8 +119,9 @@ export class WeatherbotService {
     }
   }
 
-    // @Cron('45 * * * * *')
-  //   @Cron(CronExpression.EVERY_DAY_AT_8AM)
+    @Cron('0 8 * * *', {
+      timeZone: 'Asia/Kolkata'
+    })
   async handleCron() {
     try {
       const res = await this.conn.query(
